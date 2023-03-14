@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Show the head
+        id: show_head
+        run: git show HEAD
       - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
