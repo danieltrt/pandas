@@ -9,18 +9,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 2 
+#        with:
+#          fetch-depth: 2 
           
-      - name: Show the head
-        id: show_head
-        run: git checkout ${{ github.event.pull_request.base.sha }}
+#      - name: Show the head
+#        id: show_head
+#        run: git checkout ${{ github.event.pull_request.base.sha }}
         
-      - name: Dump GitHub context
-        id: github_context_step
-        run: echo '${{ toJSON(github) }}'
+#      - name: Dump GitHub context
+#        id: github_context_step
+#        run: echo '${{ toJSON(github) }}'
         
-      - name: Hello world action step
+      - name: Generate comby rules
         uses: danieltrt/fixit@v0
         with:
           mountpoint: /github/workspace
