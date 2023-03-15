@@ -100,7 +100,7 @@ def assert_invalid_comparison(left, right, box):
             return x._ndarray
         if isinstance(x, BooleanArray):
             # NB: we are assuming no pd.NAs for now
-            return x.astype(bool)
+            return x.astype_my(bool)
         return x
 
     # rev_box: box to use for reversed comparisons
