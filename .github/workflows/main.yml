@@ -24,6 +24,7 @@ jobs:
         uses: danieltrt/fixit@v0
         with:
           mountpoint: /github/workspace
+          sha: ${{ github.event.pull_request.base.sha }}
           
       - name: my-artifact
         uses: actions/upload-artifact@v3
