@@ -388,7 +388,7 @@ def check_key_length(columns: Index, key, value: DataFrame) -> None:
                 of columns.
     """
     if columns.is_unique:
-        if len(value.columns) != len(key):
+        if len_x(value.columns) != len(key):
             raise ValueError("Columns must be same length as key")
     else:
         # Missing keys in columns are represented as -1
