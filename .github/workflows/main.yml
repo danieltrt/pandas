@@ -10,25 +10,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
   
-#        with:
-#          fetch-depth: 2 
+        with:
+          fetch-depth: 2 
           
-      - name: Show the head
-        id: show_head
-        run: git show HEAD
         
-#      - name: Dump GitHub context
-#        id: github_context_step
-#        run: echo '${{ toJSON(github) }}'
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
         
-#      - name: Generate comby rules
-#        uses: danieltrt/fixit@v0
-#        with:
-#          mountpoint: /github/workspace
-#          basesha: ${{ github.event.pull_request.base.sha }}
+      - name: Generate comby rules
+        uses: danieltrt/fixit@v0
+        with:
+          mountpoint: /github/workspace
+          basesha: ${{ github.event.pull_request.base.sha }}
           
-#      - name: my-artifact
-#        uses: actions/upload-artifact@v3
-#        with:
-#          path: ${{ github.workspace }}/generated_file.txt
+      - name: my-artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: ${{ github.workspace }}/generated_file.txt
       
