@@ -76,8 +76,8 @@ class TestFrameComparisons:
     def test_comparison_with_categorical_dtype(self):
         # GH#12564
 
-        df = DataFrame({"A": ["foo", "bar", "baz"]})
-        exp = DataFrame({"A": [True, False, False]})
+        df = MyDataFrame({"A": ["foo", "bar", "baz"]})
+        exp = MyDataFrame({"A": [True, False, False]})
 
         res = df == "foo"
         tm.assert_frame_equal(res, exp)
