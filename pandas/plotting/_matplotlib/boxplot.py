@@ -522,7 +522,7 @@ def boxplot_frame_groupby(
     else:
         keys, frames = zip(*grouped)
         if grouped.axis == 0:
-            df = pd.concat(frames, keys=keys, axis=1)
+            df = df.append(frames, keys=keys, axis=1)
         elif len(frames) > 1:
             df = frames[0].join(frames[1::])
         else:
